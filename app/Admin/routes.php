@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Routing\Router;
+use Illuminate\Http\Request;
 
 Admin::routes();
 
@@ -13,5 +14,11 @@ Route::group([
 
     $router->get('/', 'HomeController@index')->name('home');
     $router->resource('users', UserController::class);
-
+    $router->resource('pages', PagesController::class);
+    $router->resource('lengths', LengthController::class);
+    $router->resource('articles', ArticlesController::class);
+    $router->resource('article_types', Article_typeController::class);
+    $router->resource('counters', CounterController::class);
+    $router->resource('counter_types', Counter_typeController::class);
+    $router->resource('images', ImageController::class);
 });
