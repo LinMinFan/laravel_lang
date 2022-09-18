@@ -26,12 +26,12 @@ class ImageController extends AdminController
     {
         $grid = new Grid(new Image());
 
-        $grid->column('id', __('Id'));
-        $grid->column('name', __('Name'));
-        $grid->column('text', __('Text'));
-        $grid->column('img', __('Img'));
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+        $grid->column('id', __('編號'));
+        $grid->column('name', __('名稱'));
+        $grid->column('text', __('介紹'));
+        $grid->column('img', __('圖片'));
+        $grid->column('created_at', __('建立時間'));
+        $grid->column('updated_at', __('更新時間'));
 
         return $grid;
     }
@@ -46,12 +46,12 @@ class ImageController extends AdminController
     {
         $show = new Show(Image::findOrFail($id));
 
-        $show->field('id', __('Id'));
-        $show->field('name', __('Name'));
-        $show->field('text', __('Text'));
-        $show->field('img', __('Img'));
-        $show->field('created_at', __('Created at'));
-        $show->field('updated_at', __('Updated at'));
+        $show->field('id', __('編號'));
+        $show->field('name', __('名稱'));
+        $show->field('text', __('介紹'));
+        $show->field('img', __('圖片'));
+        $show->field('created_at', __('建立時間'));
+        $show->field('updated_at', __('更新時間'));
 
         return $show;
     }

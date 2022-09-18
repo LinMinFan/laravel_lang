@@ -26,11 +26,11 @@ class LengthController extends AdminController
     {
         $grid = new Grid(new Length());
 
-        $grid->column('id', __('Id'));
-        $grid->column('name', __('Name'));
-        $grid->column('sh', __('Sh'));
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+        $grid->column('id', __('編號'));
+        $grid->column('name', __('語系'));
+        $grid->column('sh', __('顯示'));
+        $grid->column('created_at', __('建立時間'));
+        $grid->column('updated_at', __('更新時間'));
 
         return $grid;
     }
@@ -45,11 +45,11 @@ class LengthController extends AdminController
     {
         $show = new Show(Length::findOrFail($id));
 
-        $show->field('id', __('Id'));
-        $show->field('name', __('Name'));
-        $show->field('sh', __('Sh'));
-        $show->field('created_at', __('Created at'));
-        $show->field('updated_at', __('Updated at'));
+        $show->field('id', __('編號'));
+        $show->field('name', __('語系'));
+        $show->field('sh', __('顯示'));
+        $show->field('created_at', __('建立時間'));
+        $show->field('updated_at', __('更新時間'));
 
         return $show;
     }
