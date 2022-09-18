@@ -14,7 +14,7 @@ class HomeController extends Controller
     {
         return $content
             ->title('控制台')
-            ->description('列表')
+            //->description('列表')
             ->row(Dashboard::title())
             ->row(function (Row $row) {
 
