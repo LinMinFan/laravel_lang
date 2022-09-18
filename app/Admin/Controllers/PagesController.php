@@ -30,6 +30,7 @@ class PagesController extends AdminController
         $grid->column('title', __('Title'));
         $grid->column('keyword', __('Keyword'));
         $grid->column('content', __('Content'));
+        $grid->column('type', __('Type'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
 
@@ -50,6 +51,7 @@ class PagesController extends AdminController
         $show->field('title', __('Title'));
         $show->field('keyword', __('Keyword'));
         $show->field('content', __('Content'));
+        $show->field('type', __('Type'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
 
@@ -68,6 +70,7 @@ class PagesController extends AdminController
         $form->text('title', __('Title'));
         $form->textarea('keyword', __('Keyword'));
         $form->textarea('content', __('Content'));
+        $form->text('type', __('Type'));
 
         return $form;
     }
