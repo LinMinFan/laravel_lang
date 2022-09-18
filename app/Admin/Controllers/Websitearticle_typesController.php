@@ -3,8 +3,7 @@
 namespace App\Admin\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Pages;
-use App\Models\Length;
+use App\Models\Article_type;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Controllers\Dashboard;
 use Encore\Admin\Layout\Column;
@@ -15,24 +14,23 @@ use Encore\Admin\Grid;
 use Encore\Admin\Show;
 
 
-class WebsitepagesController extends AdminController
+class Websitearticle_typesController extends AdminController
 {
 
     public function index(Content $content)
     {
-        $pages = Pages::all();
-        $type = Length::all();
+        $type = Article_type::all();
 
-        return $content->title('頁面管理')
-            ->view('admin::website.pages', ['pages'=>$pages,'type'=>$type]);
+        return $content->title('文章類別')
+            ->view('admin::website.article_types', ['type'=>$type]);
     }
     
     public function update($id)
     {
         $form =$this->form();
-        Pages::find($id)->update($form);
+        Article_type::find($id)->update($form);
          return redirect()->action(
-            [WebsitepagesController::class,'index']
+            [Websitearticle_typesController::class,'index']
         ); 
     }
 }
