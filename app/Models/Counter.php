@@ -13,5 +13,5 @@ class Counter extends Model
     use DefaultDatetimeFormat;
 
     protected $table = 'counters';
-    protected $fillable =['name','text','img','type',];
+    protected $fillable =['name','text','img','type','len',];
 }

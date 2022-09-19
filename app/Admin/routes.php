@@ -27,5 +27,7 @@ Route::group([
     $router->resource('/website/article_types', Websitearticle_typesController::class);
     $router->resource('/website/images', WebsiteimagesController::class);
     $router->resource('/website/pages', WebsitepagesController::class);
+    $router->resource('/website/counters', WebsiteCounterController::class);
+    $router->resource('/website/counter_types', WebsiteCounter_typeController::class);
 
 });

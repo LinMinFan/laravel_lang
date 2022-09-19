@@ -27,9 +27,9 @@ class Counter_typeController extends AdminController
         $grid = new Grid(new Counter_type());
 
         $grid->column('id', __('Id'));
-        $grid->column('name', __('Name'));
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+        $grid->column('name', __('分類名稱'));
+        $grid->column('created_at', __('建立時間'));
+        $grid->column('updated_at', __('更新時間'));
 
         return $grid;
     }
@@ -45,9 +45,9 @@ class Counter_typeController extends AdminController
         $show = new Show(Counter_type::findOrFail($id));
 
         $show->field('id', __('Id'));
-        $show->field('name', __('Name'));
-        $show->field('created_at', __('Created at'));
-        $show->field('updated_at', __('Updated at'));
+        $show->field('name', __('分類名稱'));
+        $show->field('created_at', __('建立時間'));
+        $show->field('updated_at', __('更新時間'));
 
         return $show;
     }
@@ -61,7 +61,7 @@ class Counter_typeController extends AdminController
     {
         $form = new Form(new Counter_type());
 
-        $form->text('name', __('Name'));
+        $form->text('name', __('分類名稱'));
 
         return $form;
     }
