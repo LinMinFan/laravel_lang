@@ -27,10 +27,12 @@ class WebsiteimagesController extends AdminController
     
     public function update($id)
     {
+        $path  = public_path();
         $data=[];
         $data['name']=$_POST['name'];
         $data['text']=$_POST['text'];
-        $data['img']=$_POST['img'];
+        $data['img']="images/".$_FILES['img']['name'];
+        move_uploaded_file($_FILES['img']['tmp_name'],$path.'/uploads/'.$data['img']);
         Image::find($id)->update($data);
          return redirect('admin/website/images');
     }

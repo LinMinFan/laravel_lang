@@ -19,11 +19,14 @@ use Intervention\Image\Facades\Image;
 Route::get('/', function () {
     return view('index');
 });
-
-Route::get('/{local}', function($local){
-    App::setLocale($local);
+Route::get('/{len}', function (Request $request) {
     return view('index');
 });
+
+//Route::get('/{local}', function($local){
+//    App::setLocale($local);
+//    return view('index');
+//});
 
 
 
