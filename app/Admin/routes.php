@@ -2,6 +2,8 @@
 
 use Illuminate\Routing\Router;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\App;
 
 Admin::routes();
 

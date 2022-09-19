@@ -26,10 +26,10 @@ class WebsitearticlesController extends AdminController
 
     public function update($id)
     {
-        $form =$this->form();
-        Articles::find($id)->update($form);
-         return redirect()->action(
-            [WebsitearticlesController::class,'index']
-        ); 
+        $data=[];
+        $data['name']=$_POST['name'];
+        $data['text']=$_POST['text'];
+        Articles::find($id)->update($data);
+         return redirect('admin/website/articles'); 
     }
 }

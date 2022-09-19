@@ -18,7 +18,7 @@ use Encore\Admin\Show;
 class WebsitepagesController extends AdminController
 {
 
-    public function index(Content $content)
+        public function index(Content $content)
     {
         $pages = Pages::all();
         $type = Length::all();
@@ -29,10 +29,11 @@ class WebsitepagesController extends AdminController
     
     public function update($id)
     {
-        $form =$this->form();
-        Pages::find($id)->update($form);
-         return redirect()->action(
-            [WebsitepagesController::class,'index']
-        ); 
+        $data=[];
+        $data['title']=$_POST['title'];
+        $data['keyword']=$_POST['keyword'];
+        $data['content']=$_POST['content'];
+        Pages::find($id)->update($data);
+         return redirect('admin/website/pages'); 
     }
 }
