@@ -25,7 +25,7 @@ Route::group([
     $router->resource('images', ImageController::class);
     $router->resource('/website/articles', WebsitearticlesController::class);
     $router->resource('/website/article_types', Websitearticle_typesController::class);
-    //$router->resource('/website/images', WebsiteimagesController::class);
+    $router->resource('/website/images', WebsiteimagesController::class);
     $router->resource('/website/pages', WebsitepagesController::class);
 
 });
