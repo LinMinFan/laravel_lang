@@ -65,9 +65,9 @@ class ImageController extends AdminController
     {
         $form = new Form(new Image());
 
-        $form->text('name', __('Name'));
-        $form->textarea('text', __('Text'));
-        $form->image('img', __('Img'));
+        $form->text('name', __('名稱'));
+        $form->textarea('text', __('介紹'));
+        $form->image('img', __('圖片'));
 
         return $form;
     }

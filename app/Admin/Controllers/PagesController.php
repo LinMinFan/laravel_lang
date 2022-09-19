@@ -67,10 +67,10 @@ class PagesController extends AdminController
     {
         $form = new Form(new Pages());
 
-        $form->text('title', __('Title'));
-        $form->textarea('keyword', __('Keyword'));
-        $form->textarea('content', __('Content'));
-        $form->text('type', __('Type'));
+        $form->text('title', __('標題'));
+        $form->textarea('keyword', __('關鍵字'));
+        $form->textarea('content', __('內容'));
+        $form->text('type', __('語系'));
 
         return $form;
     }

@@ -13,5 +13,5 @@ class Length extends Model
     use DefaultDatetimeFormat;
 
     protected $table = 'lengths';
-    protected $fillable =['name','sh',];
+    protected $fillable =['name','len','sh',];
 }

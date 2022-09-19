@@ -61,7 +61,7 @@ class Article_typeController extends AdminController
     {
         $form = new Form(new Article_type());
 
-        $form->text('name', __('Name'));
+        $form->text('name', __('分類名稱'));
 
         return $form;
     }

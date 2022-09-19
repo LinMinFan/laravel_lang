@@ -27,10 +27,9 @@ class Websitearticle_typesController extends AdminController
     
     public function update($id)
     {
-        $form =$this->form();
-        Article_type::find($id)->update($form);
-         return redirect()->action(
-            [Websitearticle_typesController::class,'index']
-        ); 
+        $data=[];
+        $data['name']=$_POST['name'];
+        Article_type::find($id)->update($data);
+         return redirect('admin/website/article_types');
     }
 }

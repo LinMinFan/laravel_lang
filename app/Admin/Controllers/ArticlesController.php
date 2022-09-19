@@ -67,10 +67,10 @@ class ArticlesController extends AdminController
     {
         $form = new Form(new Articles());
 
-        $form->text('name', __('Name'));
-        $form->textarea('text', __('Text'));
-        $form->image('img', __('Img'));
-        $form->number('type', __('Type'));
+        $form->text('name', __('文章名稱'));
+        $form->textarea('text', __('文章內容'));
+        $form->image('img', __('圖片'));
+        $form->number('type', __('分類'));
 
         return $form;
     }

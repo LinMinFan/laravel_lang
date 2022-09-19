@@ -28,6 +28,7 @@ class LengthController extends AdminController
 
         $grid->column('id', __('編號'));
         $grid->column('name', __('語系'));
+        $grid->column('len', __('代碼'));
         $grid->column('sh', __('顯示'));
         $grid->column('created_at', __('建立時間'));
         $grid->column('updated_at', __('更新時間'));
@@ -47,6 +48,7 @@ class LengthController extends AdminController
 
         $show->field('id', __('編號'));
         $show->field('name', __('語系'));
+        $show->field('len', __('代碼'));
         $show->field('sh', __('顯示'));
         $show->field('created_at', __('建立時間'));
         $show->field('updated_at', __('更新時間'));
@@ -63,8 +65,9 @@ class LengthController extends AdminController
     {
         $form = new Form(new Length());
 
-        $form->text('name', __('Name'));
-        $form->number('sh', __('Sh'));
+        $form->text('name', __('語系'));
+        $form->text('len', __('代碼'));
+        $form->number('sh', __('顯示'));
 
         return $form;
     }
