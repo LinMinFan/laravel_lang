@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\App;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
+use App\Http\Controllers\Fronthome;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,14 +20,12 @@ use Intervention\Image\Facades\Image;
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/{len}', function (Request $request) {
-    return view('index');
-});
-
-//Route::get('/{local}', function($local){
-//    App::setLocale($local);
+//Route::get('/{local}', function (Request $request) {
+//    App::setLocale($request);
 //    return view('index');
 //});
+
+Route::get('/{local}',[Fronthome::class,'index']);
 
 
 
