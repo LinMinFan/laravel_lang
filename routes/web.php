@@ -18,7 +18,7 @@ use App\Http\Controllers\Fronthome;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return redirect('/zh-TW');
 });
 //Route::get('/{local}', function (Request $request) {
 //    App::setLocale($request);
@@ -26,6 +26,7 @@ Route::get('/', function () {
 //});
 
 Route::get('/{local}',[Fronthome::class,'index']);
+Route::get('/counters/{id}/{local}',[Fronthome::class,'counters']);
 
 
 

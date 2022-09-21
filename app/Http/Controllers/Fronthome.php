@@ -20,6 +20,7 @@ class Fronthome extends Controller
 {
     public function index(Request $request,$local)
     {
+        
         App::setLocale($local);
         $languge_array=['zh-TW'=>1,'zh-CN'=>2,'en'=>3,'ja'=>4];
         $counters = Counter::all();
@@ -30,6 +31,12 @@ class Fronthome extends Controller
         $imgs = Image::all();
         $pages = Pages::all();
         return view('index',['counters'=>$counters,'cou_type'=>$cou_type,'arts'=>$arts,'art_type'=>$art_type,'lan'=>$lan,'imgs'=>$imgs,'pages'=>$pages,'local'=>$local,'languge_array'=>$languge_array]);
+    }
+
+    public function counters($id,$local)
+    {
+        $counter = Counter::find($id);
+        return view('counters',['counter'=>$counter,'local'=>$local]);
     }
 }
 

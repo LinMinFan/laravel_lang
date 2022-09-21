@@ -85,6 +85,7 @@
 
       {{-- Section --}}
       <div class="container">
+        {{-- Pages --}}
       <div id="section1" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
             <h1>
               @foreach ($pages as $page)
@@ -95,12 +96,68 @@
             </h1>
             
           </div>
+          {{-- Pages End --}}
+
+          {{-- Counter --}}
           <div id="section2" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
-            
+            <ul class="nav nav-pills" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link navCtp" data-toggle="pill" href="#home">全部案例</a>
+              </li>
+              @foreach ($cou_type as $key => $cTp)
+              <li class="nav-item">
+                <a class="nav-link navCtp" data-toggle="pill" href="#menu{{$key}}">{{$cTp->name}}</a>
+              </li>  
+              @endforeach
+             
+            </ul>
+          <br>
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div id="home" class="container tab-pane"><br>
+                <div class="container d-flex flex-wrap justify-content-between">
+                @foreach ($counters as $all)
+                    @if ($all->len==$languge_array[$local])
+                    <div class="card col-3" >
+                      <img class="card-img-top" src="./uploads/{{$all->img}}" alt="Card image" style="width:100%">
+                      <div class="card-body">
+                        <h4 class="card-title">{{$all->name}}</h4>
+                        <p class="card-text">{{mb_substr($all->text,0,40)}}...</p>
+                        <a href="/laravel_lang/public/counters/{{$all->id}}/{{$local}}" class="btn btn-primary stretched-link">Detail</a>
+                      </div>
+                    </div> 
+                    @endif
+                @endforeach
+              </div>
+              </div>
+              @foreach ($cou_type as $key => $cTp)
+              <div id="menu{{$key}}" class="container tab-pane"><br>
+                <div class="container d-flex flex-wrap justify-content-between">
+                  @foreach ($counters as $conTp)
+                  @if ($conTp->len==$languge_array[$local] && $conTp->type==$cTp->id)
+                  <div class="card col-3" >
+                    <img class="card-img-top" src="./uploads/{{$conTp->img}}" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                      <h4 class="card-title">{{$conTp->name}}</h4>
+                      <p class="card-text">{{mb_substr($conTp->text,0,40)}}...</p>
+                      <a href="/laravel_lang/public/counters/{{$conTp->id}}/{{$local}}" class="btn btn-primary stretched-link">Detail</a>
+                    </div>
+                  </div> 
+                  @endif
+              @endforeach
+              </div>
+              </div>
+              @endforeach
+              </div>
+            </div>
           </div>
+          {{-- Counter End --}}
         </div>
       {{-- Section End--}}
 
-      
+      <script>
+        $('.navCtp').eq(0).addClass('active');
+        $('.tab-pane').eq(0).addClass('active');
+      </script>
     </body>
 </html>
