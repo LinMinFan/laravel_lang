@@ -18,7 +18,7 @@ use App\Http\Controllers\Fronthome;
 */
 
 Route::get('/', function () {
-    return redirect('/zh-TW');
+    return redirect(str_replace('_', '-', app()->getLocale()));
 });
 //Route::get('/{local}', function (Request $request) {
 //    App::setLocale($request);
