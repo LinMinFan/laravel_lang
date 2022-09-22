@@ -17,6 +17,17 @@
           .carousel-inner img {
             width: 100%;
           }
+          .ImagesBox{
+            width: 250px;
+            height: 250px;
+            overflow: hidden;
+          }
+          .ImagesAni{
+            transition: 0.5s;
+          }
+          .ImagesBox:hover .ImagesAni{
+            transform: scale(1.5)
+          }
           </style>
     </head>
     <body class="">
@@ -28,6 +39,9 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#section2">{{trans('index.counter')}}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#section3">{{trans('index.img')}}</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
@@ -150,11 +164,25 @@
               @endforeach
               </div>
             </div>
-          </div>
-          {{-- Counter End --}}
-        </div>
-      {{-- Section End--}}
+            {{-- Counter End --}}
 
+            {{-- images --}}
+            <div id="section3" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
+            <div class="container d-flex flex-wrap justify-content-between">
+              @foreach ($imgs as $img)
+              <div class="col-4">
+              <h2>{{$img->name}}</h2>
+              <p>{{mb_substr($img->text,0,50)}}...</p>
+              <div class="ImagesBox">
+              <img src="./uploads/{{$img->img}}" class="rounded ImagesAni" alt="Cinque Terre" width="250" height="250">
+              </div>
+            </div>
+              @endforeach
+            </div>   
+          </div>
+            {{-- images End --}}
+          </div>
+          {{-- Section End--}}
       <script>
         $('.navCtp').eq(0).addClass('active');
         $('.tab-pane').eq(0).addClass('active');
